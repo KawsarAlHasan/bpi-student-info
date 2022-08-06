@@ -34,8 +34,8 @@ const SocialLogin = (props) => {
     return (
         <div>
             {erroElement}
-            <div onClick={() => signInWithGoogle()} class="form-control">
-                <button class="btn btn-info"><img style={{ width: '50px' }} className='img-fluid px-2' src={googleImg} alt="" /> Google sign In</button>
+            <div onClick={() => signInWithGoogle()} className="form-control">
+                <button className="btn btn-info"><img style={{ width: '50px' }} className='img-fluid px-2' src={googleImg} alt="" /> Google sign In</button>
             </div>
         </div>
     );

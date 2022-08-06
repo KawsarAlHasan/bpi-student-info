@@ -1,17 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
- const UseStudent = () => {
+const UseStudent = () => {
+  const [students, setStudents] = useState([])
 
-    const [students, setStudents] = useState([]);
+  useEffect(() => {
+    fetch('https://stormy-sands-12716.herokuapp.com/students')
+      .then((res) => res.json())
+      .then((data) => {
+        setStudents(data)
+      })
+  }, [])
+  return [students, setStudents]
+}
 
-    useEffect(() => {
-        fetch('http://localhost:5000/students')
-            .then(res => res.json())
-            .then(data => {
-                setStudents(data)
-            });
-    }, []);
-    return [students, setStudents]
- }
-
- export default UseStudent;
+export default UseStudent
