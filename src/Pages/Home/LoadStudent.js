@@ -76,7 +76,6 @@ const LoadStudent = (props) => {
               <th>Technology</th>
               <th>Roll</th>
               <th>Details</th>
-              <th>Edit</th>
             </tr>
           </thead>
           {students.length === 0 ? (
@@ -134,33 +133,6 @@ const LoadStudent = (props) => {
                         Details
                       </button>
                     </th>
-                    <td>
-                      <label
-                        htmlFor="my-modal-6"
-                        className="btn modal-button btn-xs btn-primary"
-                      >
-                        Edit
-                      </label>
-                      <input
-                        type="checkbox"
-                        id="my-modal-6"
-                        className="modal-toggle"
-                      />
-                      <div className="modal modal-bottom sm:modal-middle">
-                        <div className="modal-box">
-                          <h3 className="font-bold text-lg">
-                            Student Information Edit
-                          </h3>
-                          <p className="py-4">ohh no😒</p>
-                          <p className="pb-4">Edit option comming soon🚀</p>
-                          <div className="modal-action">
-                            <label htmlFor="my-modal-6" className="btn">
-                              Yay!
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
                   </tr>
                 </tbody>
               ))

@@ -20,6 +20,12 @@ const Navber = (props) => {
         <Link to="/addStudent">ADD STUDENT</Link>
       </li>
       <li>
+        <Link to="/principal">PRINCIPAL</Link>
+      </li>
+      <li>
+        <Link to="/teachers">TEACHERS</Link>
+      </li>
+      <li>
         <Link to="/notice">NOTICE</Link>
       </li>
 

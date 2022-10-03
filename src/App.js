@@ -10,10 +10,13 @@ import Login from './Pages/Login/Login'
 import RequireAuth from './Pages/Login/RequireAuth'
 import StudentDetails from './Pages/Home/StudentDetails'
 import Notice from './Pages/Notice/Notice'
+import Principal from './Pages/Principal/Principal'
+import Teachers from './Pages/Teachers/Teachers'
 
 function App() {
   return (
     <div>
+      {/* http://localhost:5000/ */}
       <Navber />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -25,6 +28,8 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="principal" element={<Principal />} />
+        <Route path="teachers" element={<Teachers />} />
         <Route path="notice" element={<Notice />} />
         <Route
           path="student/:studentId"
