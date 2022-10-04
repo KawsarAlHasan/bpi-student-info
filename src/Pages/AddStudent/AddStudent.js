@@ -45,7 +45,7 @@ const AddStudent = ({ date }) => {
             gender: data.gender,
             img: img,
           }
-          fetch(`http://localhost:5000/addStudent`, {
+          fetch(`https://stormy-sands-12716.herokuapp.com/addStudent`, {
             method: 'POST',
             headers: {
               'content-type': 'application/json',

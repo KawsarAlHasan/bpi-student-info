@@ -16,7 +16,7 @@ import Teachers from './Pages/Teachers/Teachers'
 function App() {
   return (
     <div>
-      {/* http://localhost:5000/ */}
+      {/* https://stormy-sands-12716.herokuapp.com/ */}
       <Navber />
       <Routes>
         <Route path="/" element={<Home />} />
