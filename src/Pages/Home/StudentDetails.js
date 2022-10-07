@@ -124,46 +124,52 @@ const StudentDetails = (props) => {
       <div className="hero min-h-[77vh] ">
         <div className="hero-content flex-col lg:flex-row">
           <div class="indicator">
-            <label
-              for="my-modal-3"
-              class="cursor-pointer modal-button indicator-item indicator-bottom"
-            >
-              <img src={camera} class=" w-[30px] h-[30px]" />
-            </label>
-
-            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-            <div class="modal">
-              <div class="modal-box relative">
+            {user.email === studentDetails.email ? (
+              <>
                 <label
                   for="my-modal-3"
-                  class="btn btn-sm btn-circle absolute right-2 top-2"
+                  class="cursor-pointer modal-button indicator-item indicator-bottom"
                 >
-                  ✕
+                  <img src={camera} class=" w-[30px] h-[30px]" />
                 </label>
-                <h3 class="text-lg font-bold">Student Image Change</h3>
-                {/* Student Image Change */}
-                <form
-                  className="d-flex flex-column"
-                  onSubmit={handleSubmit(imagesSubmit)}
-                >
-                  <input
-                    type="file"
-                    className="input input-bordered input-info w-full input-sm max-w-xl mb-1"
-                    {...register('image')}
-                  />
+                <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+                <div class="modal">
+                  <div class="modal-box relative">
+                    <label
+                      for="my-modal-3"
+                      class="btn btn-sm btn-circle absolute right-2 top-2"
+                    >
+                      ✕
+                    </label>
+                    <h3 class="text-lg font-bold">Student Image Change</h3>
+                    {/* Student Image Change */}
+                    <form
+                      className="d-flex flex-column"
+                      onSubmit={handleSubmit(imagesSubmit)}
+                    >
+                      <input
+                        type="file"
+                        className="input input-bordered input-info w-full input-sm max-w-xl mb-1"
+                        {...register('image')}
+                      />
 
-                  {errors.exampleRequired && (
-                    <span>This field is required</span>
-                  )}
+                      {errors.exampleRequired && (
+                        <span>This field is required</span>
+                      )}
 
-                  <input
-                    className="btn btn-info w-full input-sm max-w-xl"
-                    value="Change Student Image"
-                    type="submit"
-                  />
-                </form>
-              </div>
-            </div>
+                      <input
+                        className="btn btn-info w-full input-sm max-w-xl"
+                        value="Change Student Image"
+                        type="submit"
+                      />
+                    </form>
+                  </div>
+                </div>
+              </>
+            ) : (
+              ''
+            )}
+
             <img
               src={studentDetails.img}
               className="max-w-sm rounded-lg shadow-2xl"
@@ -174,34 +180,35 @@ const StudentDetails = (props) => {
               {studentDetails.fName + ' ' + studentDetails.lName}
             </h1>
             <p className="pt-6">
-              <span className="font-bold">Technology:</span>
+              <span className="font-bold">Technology: </span>
               {studentDetails.technology}
-              <span className="font-bold pl-6">Roll:</span>
+              <span className="font-bold pl-6">Roll: </span>
               {studentDetails.roll}
             </p>
             <p className="pt-6">
-              <span className="font-bold">Semester:</span>
+              <span className="font-bold">Semester: </span>
               {studentDetails.semester}
-              <span className="font-bold pl-6">Shift:</span>
+              <span className="font-bold pl-6">Shift: </span>
               {studentDetails.shift}
             </p>
             <p className="pt-6">
-              <span className="font-bold">Session:</span>
+              <span className="font-bold">Session: </span>
               {studentDetails.session || 'No session entry'}
             </p>
             <p className="pt-6">
-              <span className="font-bold">Address:</span>
+              <span className="font-bold">Address: </span>
               {studentDetails.address}
             </p>
             <p className="pt-6">
-              <span className="font-bold">Gender:</span> {studentDetails.gender}
+              <span className="font-bold">Gender: </span>
+              {studentDetails.gender}
             </p>
             <p className="pt-6">
-              <span className="font-bold">Phone:</span>
+              <span className="font-bold">Phone: </span>
               {studentDetails.phone || 'No Phone Number entry'}
             </p>
             <p className="pt-6">
-              <span className="font-bold">About:</span>
+              <span className="font-bold">About: </span>
               {studentDetails.description || 'No About entry'}
             </p>
           </div>

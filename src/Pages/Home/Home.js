@@ -1,12 +1,13 @@
-import React from 'react';
-import LoadStudent from './LoadStudent';
+import React from 'react'
+import LoadStudent from './LoadStudent'
 
 const Home = (props) => {
-    return (
-        <div>
-            <LoadStudent />
-        </div>
-    );
-};
+  return (
+    <div>
+      {/* https://stormy-sands-12716.herokuapp.com/ */}
+      <LoadStudent />
+    </div>
+  )
+}
 
-export default Home;
+export default Home

@@ -5,11 +5,34 @@ import './LoadStudent.css'
 import { useNavigate } from 'react-router-dom'
 
 const LoadStudent = (props) => {
-  const [students, setStudents] = UseStudent([])
+  const [pageCount, setPageCount] = useState(0)
+  const [page, setPage] = useState(0)
+  const [size, setSize] = useState(10)
 
   const [value, setValue] = useState('')
-
   const navigate = useNavigate()
+
+  const [students, setStudents] = useState([])
+
+  useEffect(() => {
+    fetch(
+      `https://stormy-sands-12716.herokuapp.com/students?page=${page}&size=${size}`,
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setStudents(data)
+      })
+  }, [page, size])
+
+  useEffect(() => {
+    fetch(`https://stormy-sands-12716.herokuapp.com/studentsCount`)
+      .then((res) => res.json())
+      .then((data) => {
+        const count = data.count
+        const pages = Math.ceil(count / 10)
+        setPageCount(pages)
+      })
+  }, [])
 
   const studentDetails = (id) => {
     navigate(`/student/${id}`)
@@ -138,6 +161,30 @@ const LoadStudent = (props) => {
               ))
           )}
         </table>
+      </div>
+
+      {/* pagination */}
+      <div class="btn-group flex justify-center">
+        <span className="font-bold">Page No: </span>
+        {[...Array(pageCount).keys()].map((number) => (
+          <button
+            className={page === number ? 'btn btn-sm btn-active' : 'btn btn-sm'}
+            onClick={() => setPage(number)}
+          >
+            {number + 1}
+          </button>
+        ))}
+        <select
+          onChange={(e) => setSize(e.target.value)}
+          className="btn btn-sm"
+        >
+          <option value="5">5</option>
+          <option value="10" selected>
+            10
+          </option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
       </div>
     </div>
   )
