@@ -16,7 +16,7 @@ const StudentDetails = (props) => {
   const [studentDetails, setStudentDetails] = useState({})
 
   useEffect(() => {
-    const url = `http://localhost:5000/student/${studentId}`
+    const url = `https://stormy-sands-12716.herokuapp.com/student/${studentId}`
     fetch(url)
       .then((res) => res.json())
       .then((data) => setStudentDetails(data))
@@ -41,7 +41,7 @@ const StudentDetails = (props) => {
       description,
     }
     // send data to the server
-    const urlLink = `http://localhost:5000/student/${studentId}`
+    const urlLink = `https://stormy-sands-12716.herokuapp.com/student/${studentId}`
     fetch(urlLink, {
       method: 'PUT',
       headers: {
@@ -61,7 +61,7 @@ const StudentDetails = (props) => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure?')
     if (proceed) {
-      const url = `http://localhost:5000/student/${id}`
+      const url = `https://stormy-sands-12716.herokuapp.com/student/${id}`
       fetch(url, {
         method: 'DELETE',
       })
@@ -101,7 +101,7 @@ const StudentDetails = (props) => {
           const student = {
             img: img,
           }
-          fetch(`http://localhost:5000/user/${studentId}`, {
+          fetch(`https://stormy-sands-12716.herokuapp.com/user/${studentId}`, {
             method: 'PUT',
             headers: {
               'content-type': 'application/json',

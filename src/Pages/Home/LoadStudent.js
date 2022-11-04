@@ -14,7 +14,9 @@ const LoadStudent = (props) => {
   const [students, setStudents] = useState([])
 
   useEffect(() => {
-    fetch(`http://localhost:5000/students?page=${page}&size=${size}`)
+    fetch(
+      `https://stormy-sands-12716.herokuapp.com/students?page=${page}&size=${size}`,
+    )
       .then((res) => res.json())
       .then((data) => {
         setStudents(data)
@@ -22,7 +24,7 @@ const LoadStudent = (props) => {
   }, [page, size])
 
   useEffect(() => {
-    fetch(`http://localhost:5000/studentsCount`)
+    fetch(`https://stormy-sands-12716.herokuapp.com/studentsCount`)
       .then((res) => res.json())
       .then((data) => {
         const count = data.count
