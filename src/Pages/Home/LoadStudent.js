@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import banner1 from '../../Images/banner1.jpg'
-import UseStudent from '../Shared/UseStudent'
 import './LoadStudent.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -15,9 +14,7 @@ const LoadStudent = (props) => {
   const [students, setStudents] = useState([])
 
   useEffect(() => {
-    fetch(
-      `https://stormy-sands-12716.herokuapp.com/students?page=${page}&size=${size}`,
-    )
+    fetch(`http://localhost:5000/students?page=${page}&size=${size}`)
       .then((res) => res.json())
       .then((data) => {
         setStudents(data)
@@ -25,7 +22,7 @@ const LoadStudent = (props) => {
   }, [page, size])
 
   useEffect(() => {
-    fetch(`https://stormy-sands-12716.herokuapp.com/studentsCount`)
+    fetch(`http://localhost:5000/studentsCount`)
       .then((res) => res.json())
       .then((data) => {
         const count = data.count

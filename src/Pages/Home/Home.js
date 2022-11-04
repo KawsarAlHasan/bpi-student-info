@@ -1,11 +1,13 @@
 import React from 'react'
+import TotalStudent from '../components/TotalStudent'
 import LoadStudent from './LoadStudent'
 
 const Home = (props) => {
   return (
     <div>
-      {/* https://stormy-sands-12716.herokuapp.com/ */}
+      {/* ttps://stormy-sands-12716.herokuapp.com/ */}
       <LoadStudent />
+      <TotalStudent />
     </div>
   )
 }

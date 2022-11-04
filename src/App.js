@@ -12,12 +12,22 @@ import StudentDetails from './Pages/Home/StudentDetails'
 import Notice from './Pages/Notice/Notice'
 import Principal from './Pages/Principal/Principal'
 import Teachers from './Pages/Teachers/Teachers'
+import MenuIcon from './Pages/components/MenuIcon'
+import { useState } from 'react'
 
 function App() {
+  // const [theme, setTheme] = useState('light')
+
+  // const themeTogler = () => {
+  //   theme = 'light' ? setTheme('dark') : setTheme('light')
+  // }
+
   return (
     <div>
-      {/* https://stormy-sands-12716.herokuapp.com/ */}
       <Navber />
+      <div>
+        <MenuIcon />
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
