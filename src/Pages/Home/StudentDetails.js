@@ -16,7 +16,7 @@ const StudentDetails = (props) => {
   const [studentDetails, setStudentDetails] = useState({})
 
   useEffect(() => {
-    const url = `https://stormy-sands-12716.herokuapp.com/student/${studentId}`
+    const url = `https://bpi-student-info.onrender.com/student/${studentId}`
     fetch(url)
       .then((res) => res.json())
       .then((data) => setStudentDetails(data))
@@ -41,7 +41,7 @@ const StudentDetails = (props) => {
       description,
     }
     // send data to the server
-    const urlLink = `https://stormy-sands-12716.herokuapp.com/student/${studentId}`
+    const urlLink = `https://bpi-student-info.onrender.com/student/${studentId}`
     fetch(urlLink, {
       method: 'PUT',
       headers: {
@@ -61,7 +61,7 @@ const StudentDetails = (props) => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure?')
     if (proceed) {
-      const url = `https://stormy-sands-12716.herokuapp.com/student/${id}`
+      const url = `https://bpi-student-info.onrender.com/student/${id}`
       fetch(url, {
         method: 'DELETE',
       })
@@ -80,7 +80,6 @@ const StudentDetails = (props) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm()
 
@@ -101,7 +100,7 @@ const StudentDetails = (props) => {
           const student = {
             img: img,
           }
-          fetch(`https://stormy-sands-12716.herokuapp.com/user/${studentId}`, {
+          fetch(`https://bpi-student-info.onrender.com/user/${studentId}`, {
             method: 'PUT',
             headers: {
               'content-type': 'application/json',
@@ -130,7 +129,7 @@ const StudentDetails = (props) => {
                   for="my-modal-3"
                   class="cursor-pointer modal-button indicator-item indicator-bottom"
                 >
-                  <img src={camera} class=" w-[30px] h-[30px]" />
+                  <img src={camera} class=" w-[30px] h-[30px]" alt="no image" />
                 </label>
                 <input type="checkbox" id="my-modal-3" class="modal-toggle" />
                 <div class="modal">

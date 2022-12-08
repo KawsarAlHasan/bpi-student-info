@@ -45,7 +45,7 @@ const AddStudent = ({ date }) => {
             gender: data.gender,
             img: img,
           }
-          fetch(`https://stormy-sands-12716.herokuapp.com/addStudent`, {
+          fetch(`https://bpi-student-info.onrender.com/addStudent`, {
             method: 'POST',
             headers: {
               'content-type': 'application/json',

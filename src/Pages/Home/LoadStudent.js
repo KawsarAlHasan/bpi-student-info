@@ -15,7 +15,7 @@ const LoadStudent = (props) => {
 
   useEffect(() => {
     fetch(
-      `https://stormy-sands-12716.herokuapp.com/students?page=${page}&size=${size}`,
+      `https://bpi-student-info.onrender.com/students?page=${page}&size=${size}`,
     )
       .then((res) => res.json())
       .then((data) => {
@@ -24,7 +24,7 @@ const LoadStudent = (props) => {
   }, [page, size])
 
   useEffect(() => {
-    fetch(`https://stormy-sands-12716.herokuapp.com/studentsCount`)
+    fetch(`https://bpi-student-info.onrender.com/studentsCount`)
       .then((res) => res.json())
       .then((data) => {
         const count = data.count
